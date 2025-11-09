@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Horizontal Roadmap / Timeline</title>
+    <link rel="stylesheet" href="roadmap.css" />
+    <script src="roadmap.js" defer></script>
+
+    <style>
+        html,body{
+            height:100%;
+            margin:0;
+            font-family:Inter, Roboto, system-ui, -apple-system, "Segoe UI", sans-serif;
+            background-color: #232323;
+            transition: 500ms ease-in-out;
+        }
+
+        #darkModeToggle {
+            position: absolute;
+            top: 1.3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 0.7rem 1.3rem;
+            border: none;
+            border-radius: 0.7rem;
+            background-color: #888;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 200ms ease-in-out;
+        }
+
+        #darkModeToggle:hover {
+            background-color: #555;
+        }
+    </style>
+
+</head>
+<body>
+<button id="darkModeToggle">☀️</button>
+
+<div id="roadmap" class="rm-wrapper-light rm-no-select" data-scroll="true">
+    <div class="rm-line">
+        <div class="rm-item-container rm-done">
+            <div class="rm-dot"></div>
+            <div class="rm-item">
+                <p class="rm-item-title">Concept</p>
+                <p class="rm-date">Nov 2025</p>
+                <p class="rm-item-content">Developed the first concept for the project.</p>
+            </div>
+        </div>
+
+        <div class="rm-item-container rm-fail">
+            <div class="rm-dot"></div>
+            <div class="rm-item">
+                <p class="rm-item-title">Design</p>
+                <p class="rm-item-content"><span class="rm-date-inline">Q2 2026</span> — UI & prototypes</p>
+            </div>
+        </div>
+
+        <div class="rm-item-container">
+            <div class="rm-dot"></div>
+            <div class="rm-item">
+                <p class="rm-item-title">Release</p>
+                <p class="rm-item-content">Q3 2026 — initial release</p>
+            </div>
+        </div>
+
+        <div class="rm-item-container">
+            <div class="rm-dot"></div>
+            <div class="rm-item">
+                <p class="rm-item-title">Bug fixing</p>
+                <p class="rm-item-content">Q4 2026 — it's not a bug. It's an unexpected feature</p>
+            </div>
+        </div>
+
+        <div class="rm-item-container">
+            <div class="rm-dot"></div>
+            <div class="rm-item">
+                <p class="rm-item-title">Buy more coffee</p>
+                <p class="rm-item-content">Q1 2027 — the one and only fuel</p>
+            </div>
+        </div>
+
+        <div class="rm-item-container">
+            <div class="rm-dot"></div>
+            <div class="rm-item">
+                <p class="rm-item-title">New feature: Clickable button</p>
+                <p class="rm-item-content">Q2 2027 — a button, I must click it</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const roadmap = document.getElementById('roadmap');
+    let isLight = false;
+    body.style.backgroundColor = '#232323';
+    roadmap.classList.remove('rm-wrapper-light');
+    roadmap.classList.add('rm-wrapper-dark');
+
+    toggleBtn.addEventListener('click', () => {
+        isLight = !isLight;
+
+        if (isLight) {
+            // Wechsle zu Light Mode
+            body.style.backgroundColor = '#ffffff';
+            roadmap.classList.remove('rm-wrapper-dark');
+            roadmap.classList.add('rm-wrapper-light');
+            toggleBtn.innerHTML = '🌙'
+        } else {
+            // Wechsle zu Dark Mode
+            body.style.backgroundColor = '#232323';
+            roadmap.classList.remove('rm-wrapper-light');
+            roadmap.classList.add('rm-wrapper-dark');
+            toggleBtn.innerHTML = '☀️'
+        }
+    });
+</script>
+</body>
+</html>
