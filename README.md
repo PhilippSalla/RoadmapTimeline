@@ -1,6 +1,6 @@
 ﻿# 🛣️ Milestone Roadmap & Timeline
 
-A modern, minimalistic **horizontal roadmap & timeline component** — framework-free and supporting both light and dark modes.
+A modern, minimalistic **horizontal & vertical roadmap & timeline component** — framework-free and supporting both light and dark modes.
 
 
 ## Preview
@@ -14,7 +14,7 @@ A modern, minimalistic **horizontal roadmap & timeline component** — framework
 
 ---
 
-- ✅ Responsive horizontal layout
+- ✅ Responsive horizontal & vertical layout
 - ✅ Pure JS and CSS, no framework
 - ✅ Neutral coloring but easily customizable
 - ✅ [Supported light and dark mode](#light-and-dark-mode)
@@ -27,9 +27,6 @@ A modern, minimalistic **horizontal roadmap & timeline component** — framework
 ## Getting Started
 
 ---
-
-> **NOTE:**
-> Currently, the roadmap is *not optimized* for mobile display!
 
 To add the roadmap to your project, you need to include its stylesheet and js-script, so the classes in the 
 html structure work properly.

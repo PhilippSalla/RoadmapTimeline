@@ -1,6 +1,10 @@
 ﻿function updateWidth(){
     const roadmap = document.querySelector('.rm-line');
     if (!roadmap) return;
+    if (window.innerWidth < 32 * parseFloat(getComputedStyle(document.documentElement).fontSize)){
+        roadmap.style.minWidth = "0";
+        return;
+    }
     const itemsList = roadmap.querySelectorAll('.rm-item-container');
     const remBase = parseFloat(getComputedStyle(document.documentElement).fontSize);
     const baseRem = 316 / remBase; // item width rem
@@ -9,6 +13,7 @@
 }
 
 function scrollHorizontally(e) {
+    if (window.innerWidth < 32 * parseFloat(getComputedStyle(document.documentElement).fontSize)) return;
     e = window.event || e;
     var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
     document.getElementById(this.id).scrollLeft -= (delta * 80); // Default 40

@@ -320,3 +320,57 @@
 .rm-wrapper-light .rm-date-inline {
     color: var(--rm-clr-title-light);
 }
+
+@media (width < 32rem){
+
+    /* Roadmap wrapper, light and dark mode setting */
+    .rm-wrapper-light,
+    .rm-wrapper-dark {
+        overflow-y: auto;
+        overflow-x: unset;
+    }
+
+    /* Roadmap timeline */
+    .rm-line {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .rm-line::before {
+        height: 100%;
+        width: 4px;
+    }
+
+    /* Element container */
+    .rm-item-container {
+        width: 100%;
+    }
+
+    /* Element dot on timeline */
+    .rm-dot {
+        left: -1.145rem;
+    }
+
+    /* Roadmap content wrapper */
+    .rm-item-container:nth-child(even) .rm-item,
+    .rm-item-container:nth-child(odd) .rm-item {
+        position: relative;
+        width: 100%;
+    }
+
+    .rm-item-container:nth-child(odd):hover .rm-item,
+    .rm-item-container:nth-child(even):hover .rm-item {
+        transform: translateX(calc(-50% + 0.7rem)) scale(1.01);
+    }
+
+    /* Content wrapper pointers */
+    .rm-item-container:nth-child(odd) .rm-item::after,
+    .rm-item-container:nth-child(even) .rm-item::after {
+        position: absolute;
+        top: calc(50% - 7px);
+        bottom: unset;
+        left: -0.3rem;
+        transform: rotate(45deg);
+    }
+}
