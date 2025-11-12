@@ -44,7 +44,7 @@ html structure work properly.
 
 ```html
 <link rel="stylesheet" href="https://philippsalla.de/roadmap/roadmap.css">
-<script src="https://philippsalla/roadmap/roadmap.js" defer></script>
+<script src="https://philippsalla.de/roadmap/roadmap.js" defer></script>
 ```
 
 ### Structure
@@ -52,6 +52,7 @@ html structure work properly.
 Copy the following code into your code and add additional ``rm-item-container``s if you need more.
 
 ```html
+<!-- RoadmapTimeline | © 2025 Philipp Salla | https://github.com/PhilippSalla/RoadmapTimeline | Distributed under MIT license-->
 <div id="roadmap" class="rm-wrapper-light rm-no-select" data-scroll="true">
     <div class="rm-line">
 

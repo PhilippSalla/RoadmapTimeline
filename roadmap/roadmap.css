@@ -1,4 +1,11 @@
-﻿:root {
+﻿/*!
+ * roadmap.html / roadmap.js / roadmap.css
+ * Copyright (c) 2025 Philipp Salla
+ * Released under the MIT License
+ * https://github.com/PhilippSalla/RoadmapTimeline
+ */
+
+:root {
     /* Status coloring light mode */
     --rm-clr-fail-light: #842029;
     --rm-clr-fail-bg-light: #f8d7da;

@@ -1,4 +1,11 @@
-﻿function updateWidth(){
+﻿/*!
+ * roadmap.html / roadmap.js / roadmap.css
+ * Copyright (c) 2025 Philipp Salla
+ * Released under the MIT License
+ * https://github.com/PhilippSalla/RoadmapTimeline
+ */
+
+function updateWidth(){
     const roadmap = document.querySelector('.rm-line');
     if (!roadmap) return;
     if (window.innerWidth < 32 * parseFloat(getComputedStyle(document.documentElement).fontSize)){
