@@ -8,12 +8,12 @@
 function updateWidth(){
     const roadmap = document.querySelector('.rm-line');
     if (!roadmap) return;
-    if (window.innerWidth < 32 * parseFloat(getComputedStyle(document.documentElement).fontSize)){
+    if (window.innerWidth < 32 * parseFloat(getComputedStyle(roadmap).fontSize)){
         roadmap.style.minWidth = "0";
         return;
     }
     const itemsList = roadmap.querySelectorAll('.rm-item-container');
-    const remBase = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const remBase = parseFloat(getComputedStyle(roadmap).fontSize);
     const baseRem = 316 / remBase; // item width rem
     const gapRem = 21 / remBase; // gap width in rem
     roadmap.style.minWidth = `${itemsList.length * baseRem + Math.max(0, itemsList.length - 1) * gapRem}rem`;
