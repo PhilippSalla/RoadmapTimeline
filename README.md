@@ -21,6 +21,7 @@ A modern, minimalistic **horizontal & vertical roadmap & timeline component** �
 - ✅ [Additional state coloring for success and failed state](#status-coloring)
 - ✅ [Text area for a date value](#date)
 - ✅ [Horizontal scrolling](#scrolling-behaviour)
+- ✅ [Scroll target](#scroll-target)
 - ✅ [No-select option](#no-select)
 
 
@@ -194,16 +195,32 @@ Add the class `rm-date-inline` to the element that contains your date text.
 
 ### Scrolling Behaviour
 
-Add the `data-scroll` attribute to the `rm-wrapper-light` or `rm-wrapper-dark` and set its value to `true` to override
+Add the `data-rmscroll` attribute to the `rm-wrapper-light` or `rm-wrapper-dark` and set its value to `true` to override
 the default mouse wheel scroll behaviour. When enabled the mouse wheel scroll can be used to scroll the roadmap horizontally.
 
 **Example:**
 
 ````html
-<div id="roadmap" class="rm-wrapper-light" data-scroll="true">
+<div id="roadmap" class="rm-wrapper-light" data-rmscroll="true">
     .
     .
     .
+</div>
+````
+
+### Scroll Target
+
+You can add the `data-rmscrolltarget` attribute with the value `true` to any `rm-item-container` element. Doing so will
+scroll to the first appearance of this attribute on `DOMContentLoaded`.
+
+**Example:**
+````html
+<div class="rm-item-container" data-rmscrolltarget="true">
+    <div class="rm-dot"></div>
+    <div class="rm-item">
+        <p class="rm-item-title">Latest</p>
+        <p class="rm-item-content"><span class="rm-date-inline">Q4 2025</span> — Current</p>
+    </div>
 </div>
 ````
 
