@@ -16,8 +16,10 @@
 
     <style>
         html,body{
-            height:100%;
-            margin:0;
+            height: 100%;
+            display: grid;
+            align-items: center;
+            margin: 0;
             font-family:Inter, Roboto, system-ui, -apple-system, "Segoe UI", sans-serif;
             background-color: #232323;
             transition: 500ms ease-in-out;
@@ -49,9 +51,6 @@
                 left: unset;
                 right: 0.7rem;
                 transform: unset;
-            }
-            #roadmap{
-                padding-top: 4rem;
             }
         }
     </style>
@@ -95,7 +94,7 @@
             </div>
         </div>
 
-        <div class="rm-item-container">
+        <div class="rm-item-container rm-now">
             <div class="rm-dot"></div>
             <div class="rm-item">
                 <p class="rm-item-title">Buy more coffee</p>

@@ -5,7 +5,7 @@
  * https://github.com/PhilippSalla/RoadmapTimeline
  */
 
-function updateRmLine(){
+function updateDimensions(){
     const roadmap = document.querySelector('.rm-line');
     if (!roadmap) return;
 
@@ -16,6 +16,7 @@ function updateRmLine(){
     const gapPx = 21;
     const remBase = parseFloat(getComputedStyle(roadmap).fontSize);
     if (window.innerWidth < 32 * remBase) {
+        // Sum of all elements' height determines total height
         let totalHeight = 0;
         itemsList.forEach((item, index) => {
             totalHeight += item.offsetHeight;
@@ -24,11 +25,25 @@ function updateRmLine(){
             }
         });
         roadmap.style.minWidth = "0";
-        roadmap.style.minHeight = `${totalHeight}px`;
+        roadmap.style.height = roadmap.style.minHeight = `${totalHeight + 100}px`;
     }
     else {
+        // Highest element determines total height
+        let highest = 0;
+        const list = document.querySelectorAll('.rm-item');
+        if (list.length > 0){
+            list.forEach(item => {
+                if (item.offsetHeight > highest) {
+                    highest = item.offsetHeight;
+                }
+                console.log(item.innerHTML);
+                console.log(window.getComputedStyle(item).height);
+
+            });
+        }
         roadmap.style.minWidth =`${itemsList.length * (316 / remBase) + Math.max(0, itemsList.length - 1) * (gapPx / remBase)}rem`;
-        roadmap.style.minHeight = "auto";
+        roadmap.style.minHeight = roadmap.style.height = highest * 2 + 100 + "px";
+        console.log("Height set to: " + highest * 2 + 2000 + "px, " + highest);
     }
 
     scrollToTarget();
@@ -72,6 +87,6 @@ if (roadmapWrapper != null) {
         }
     }
     document.addEventListener("DOMContentLoaded", scrollToTarget)
-    window.addEventListener('resize', updateRmLine);
-    updateRmLine();
+    window.addEventListener('resize', updateDimensions);
+    updateDimensions();
 }
