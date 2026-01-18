@@ -327,6 +327,13 @@
     color: var(--rm-clr-title-light);
 }
 
+/* Lists */
+.rm-wrapper-light ul li,
+.rm-wrapper-dark ul li{
+    margin-left: 1.3rem;
+}
+
+
 @media (width < 32rem){
 
     /* Roadmap wrapper, light and dark mode setting */
