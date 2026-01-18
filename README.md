@@ -54,7 +54,7 @@ Copy the following code into your code and add additional ``rm-item-container``s
 
 ```html
 <!-- RoadmapTimeline | © 2025 Philipp Salla | https://github.com/PhilippSalla/RoadmapTimeline | Distributed under MIT license-->
-<div id="roadmap" class="rm-wrapper-light rm-no-select" data-scroll="true">
+<div id="roadmap" class="rm-wrapper-light rm-no-select" data-rmscroll="true">
     <div class="rm-line">
 
         <!-- Element with success coloring and date in separate line -->
